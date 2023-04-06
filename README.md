@@ -128,3 +128,5 @@ C:\Users\xiaop>ping  www.abcabc.com
 ```
 
 IPv4地址的DNS请求正常。
+
+注意：对于一个网站，往往具有多个域名来为其分流，所以需要查询网站的所有域名，逐一在dnsmasq.conf中添加上面的域名解析配置。
