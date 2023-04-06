@@ -86,7 +86,15 @@ Wi-Fi路由上，不需要做任何地址配置修改。只是需要检查一下
             option ip_interface 'pppoe-wan'
             option enabled '1'
 ```
-ddns的运行状况可以查看文件`/var/log/ddns/noip_ipv6.log`。需要注意的是：
+ddns的运行状况可以查看文件`/var/log/ddns/noip_ipv6.log`。当IP信息更新成功时，可以看到类似于下面的信息：
+
+```
+ 215622       : DDNS Provider answered:
+good 240e:0398:0412:13d3:7ae5:d616:xxxx:xxxx
+ 215623  info : Update successful - IP '240e:0398:0412:13d3:7ae5:d616:xxxx:xxxx' send
+```
+
+需要注意的是：
 - 国内访问noip比较慢，ddns发送地址更新消息可能会失败。ddns会定期重试，一般在几次重试后会更新成功
 - 路由器重启后IPv6地址发生变化，ddns会自动更新地址。DNS record的更新需要一些时间，大概一个小时后整个数据访问流程会恢复正常。
 <br><br>
